@@ -5,7 +5,7 @@ public class Food : MonoBehaviour
 {
     [SerializeField] private int _score;
     
-    private float _delayDestroy = 3f;
+    private float _delayDestroy = 2f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,8 +19,8 @@ public class Food : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(_delayDestroy);
             Debug.Log("Вы заработали: " + _score);
+            yield return new WaitForSeconds(_delayDestroy);
             Destroy(gameObject);
         }
     }
